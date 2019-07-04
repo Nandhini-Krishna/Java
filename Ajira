@@ -1,0 +1,53 @@
+package test;
+import java.util.Scanner;
+public class waterWorld {
+public static void main(String[] args) {
+Scanner s = new Scanner(System.in);
+int days = s.nextInt();
+//	System.out.println(days);
+int clusters = s.nextInt();
+//	System.out.println(clusters);
+s.nextLine();
+String[] cluster = new String[clusters];
+String total = "";
+for(int i = 0; i < clusters; i++) {
+cluster[i] = s.nextLine();
+total += cluster[i]+" ";
+
+}
+//	System.out.println(total);
+String[] links = new String[clusters];
+String link = "";
+for(int i = 0; i < clusters; i++) {
+links[i] = s.nextLine();
+link += links[i] + " ";
+}
+//	System.out.println(link);
+String[] cap = total.split(" ");
+int[] storage = new int[clusters];
+int j = 0;
+for(int i = 2; i < cap.length; i=i+3) {
+storage[j] = Integer.parseInt(cap[i]);
+j++;
+}
+j = 0;
+int[] need = new int[clusters];
+for(int i = 1; i < cap.length; i=i+3) {
+need[j] = Integer.parseInt(cap[i]);
+j++;
+}
+String[] path = link.split("_");
+for(int i = 0; i < path.length; i++)
+System.out.println(path[i]);
+
+
+
+
+
+
+
+s.close();
+
+}
+
+}
